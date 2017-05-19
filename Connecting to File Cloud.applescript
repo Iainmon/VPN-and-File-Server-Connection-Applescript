@@ -3,6 +3,11 @@
 --  Copyright © 2017 Iain Moncrief. All rights reserved.
 --
 
+
+-- Please note, that this file will not wrok as is. These snippets need to be edited to fit your needs.
+
+
+
     global serverConnectionStatus
     
 

@@ -4,6 +4,10 @@
 --
 
 
+
+-- Please note, that this file will not wrok as is. These snippets need to be edited to fit your needs.
+
+
     
     -- This is the global variable
     global serverConnectionStatus
