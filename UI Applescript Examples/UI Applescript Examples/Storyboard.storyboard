@@ -40,14 +40,6 @@
                                 <rect key="frame" x="121" y="196" width="100" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </progressIndicator>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-4g-d1k">
-                                <rect key="frame" x="131" y="149" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="90L-th-3AG">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-Wd-bjh">
                                 <rect key="frame" x="321" y="149" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -64,23 +56,42 @@
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igV-pd-vhn">
                                 <rect key="frame" x="221" y="35" width="77" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="happy" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="YVd-gk-uuR">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sad" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="YVd-gk-uuR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="imageBotton:" target="zAt-U9-rip" id="TbY-lm-2r2"/>
+                                    <action selector="imageButton:" target="zAt-U9-rip" id="mRx-Za-B7D"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-Rg-tHh">
-                                <rect key="frame" x="306" y="20" width="37" height="17"/>
+                                <rect key="frame" x="306" y="20" width="108" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="bcg-kr-pFU">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="I'm Sad, Click Me" id="bcg-kr-pFU">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9e-N6-Uer">
+                                <rect key="frame" x="176" y="149" width="69" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ncK-bC-3pe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-4g-d1k">
+                                <rect key="frame" x="110" y="149" width="70" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="90L-th-3AG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="button1:" target="zAt-U9-rip" id="66l-cu-GHt"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
@@ -88,6 +99,8 @@
                 <customObject id="zAt-U9-rip" customClass="AppDelegate">
                     <connections>
                         <outlet property="imageButton1" destination="igV-pd-vhn" id="Xpm-ei-e29"/>
+                        <outlet property="label1" destination="AUh-Rg-tHh" id="fnQ-2L-3Yb"/>
+                        <outlet property="progressWheel" destination="h8i-Z7-xxG" id="Top-G5-gBK"/>
                     </connections>
                 </customObject>
                 <customObject id="9EV-e1-8lv"/>
@@ -119,8 +132,32 @@
             </objects>
             <point key="canvasLocation" x="819" y="100.5"/>
         </scene>
+        <!--Application-->
+        <scene sceneID="2q1-a6-hgE">
+            <objects>
+                <application id="2Xs-xT-c3M" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="Lc2-eW-Jqq">
+                        <items>
+                            <menuItem title="UI Examples" id="yJj-1w-mhE">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="UI Examples" systemMenu="apple" id="U65-IM-ElM">
+                                    <items>
+                                        <menuItem title="Quit" keyEquivalent="q" id="Gnf-cc-WaZ"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="zAt-U9-rip" id="dQB-hv-Ia4"/>
+                    </connections>
+                </application>
+                <customObject id="ahA-zw-2JV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="-120"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="happy" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="sad" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
 </document>

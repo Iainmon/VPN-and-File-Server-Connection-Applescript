@@ -22,8 +22,11 @@ script AppDelegate
     
     property image1 : missing value
     
+
+    
 	on applicationWillFinishLaunching_(aNotification)
-		-- Insert code here to initialize your application before any files are opened 
+		-- Insert code here to initialize your application before any files are opened
+        
 	end applicationWillFinishLaunching_
 	
 	on applicationShouldTerminate_(sender)
@@ -31,7 +34,30 @@ script AppDelegate
 		return current application's NSTerminateNow
 	end applicationShouldTerminate_
 	
+    
+    on button1_(sender)
+        tell progressWheel to startAnimation_(sender)
+    end button1_
+    
+    on button2_(sender)
+        tell progressWheel to stopAnimation_(sender)
+    end button2_
+    
+    
     on imageButton_(sender)
+        set newImage1 to current application's NSImage's imageNamed_("happy.png")
+        imageButton1's setImage_(newImage1)
+        label1's setStringValue_("I'm Happy!")
+        delay 1
+        label1's setStringValue_("4")
+        delay 1
+        label1's setStringValue_("3")
+        delay 1
+        label1's setStringValue_("2")
+        delay 1
+        label1's setStringValue_("1")
+        delay 1
+        label1's setStringValue_("I'm Sad, Click Me")
         set newImage1 to current application's NSImage's imageNamed_("sad.png")
         imageButton1's setImage_(newImage1)
     end imageButton_
