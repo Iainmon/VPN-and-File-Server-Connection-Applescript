@@ -28,6 +28,9 @@ script AppDelegate
     
     global variable1
     
+    
+    
+    
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
         
@@ -38,6 +41,12 @@ script AppDelegate
 		return current application's NSTerminateNow
 	end applicationShouldTerminate_
 	
+    
+    
+    
+    
+    
+    
     
     on button1_(sender)
         tell progressWheel to startAnimation_(sender)
@@ -63,6 +72,12 @@ script AppDelegate
     end button2_
     
     
+    
+    
+    
+    
+    
+    
     on imageButton_(sender)
         set newImage1 to current application's NSImage's imageNamed_("happy.png")
         imageButton1's setImage_(newImage1)
@@ -80,6 +95,15 @@ script AppDelegate
         set newImage1 to current application's NSImage's imageNamed_("sad.png")
         imageButton1's setImage_(newImage1)
     end imageButton_
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     on button3_(sender)
         set variable1 to 1
