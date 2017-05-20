@@ -36,10 +36,6 @@
                                 <rect key="frame" x="163" y="237" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </progressIndicator>
-                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="8fw-dy-AwE">
-                                <rect key="frame" x="121" y="196" width="100" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-Wd-bjh">
                                 <rect key="frame" x="321" y="149" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -47,9 +43,12 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="button3:" target="zAt-U9-rip" id="xTr-BG-LZR"/>
+                                </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuQ-98-0oL">
-                                <rect key="frame" x="337" y="205" width="48" height="48"/>
+                                <rect key="frame" x="323" y="197" width="77" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TMa-qT-YsU"/>
                             </imageView>
@@ -80,6 +79,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="button2:" target="zAt-U9-rip" id="AOy-5l-iF8"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-4g-d1k">
                                 <rect key="frame" x="110" y="149" width="70" height="32"/>
@@ -92,12 +94,30 @@
                                     <action selector="button1:" target="zAt-U9-rip" id="66l-cu-GHt"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="UWa-ED-EaX">
+                                <rect key="frame" x="121" y="196" width="100" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <binding destination="zAt-U9-rip" name="value" keyPath="progressBar" id="ocT-Px-lAn"/>
+                                </connections>
+                            </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-ec-qOf">
+                                <rect key="frame" x="309" y="283" width="103" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Im just an image" id="RHG-EJ-BbX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="m1j-3a-V84" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="zAt-U9-rip" customClass="AppDelegate">
                     <connections>
+                        <outlet property="MyProgressBar" destination="UWa-ED-EaX" id="aNP-cy-hmH"/>
+                        <outlet property="image1" destination="xuQ-98-0oL" id="wiT-iO-yri"/>
                         <outlet property="imageButton1" destination="igV-pd-vhn" id="Xpm-ei-e29"/>
                         <outlet property="label1" destination="AUh-Rg-tHh" id="fnQ-2L-3Yb"/>
                         <outlet property="progressWheel" destination="h8i-Z7-xxG" id="Top-G5-gBK"/>
