@@ -12,6 +12,7 @@
     
 
 on checkConnection_()
+    
     set IP_address to "(ANY STABLE WEBSITE)"
     
     set serverConnectionStatus to false
@@ -20,12 +21,8 @@ on checkConnection_()
         try
             
             set ping to (do shell script "ping -c 2 " & IP_address)
-            
-            
-            
+
             set serverConnectionStatus to true
-            
-            
             
         on error
             
@@ -35,9 +32,6 @@ on checkConnection_()
             
         end try
         
-       
-
-    
 end checkConnection_
 
 
@@ -49,24 +43,20 @@ checkConnection_()
 
  if serverConnectionStatus is true then
 
- try
-     set volumeString to "afp://" & "" & ":" & "null" & "@YourDomain"
-     -- having the volume string in that configuration, will give the user a dialog to securley put their username and password into. the user also has the feature to save the user and pass to their keychain.
-     on error
-     display dialog "wups"
-end try
+set volumeString to "afp://" & "" & ":" & "null" & "@YourDomain"
+-- having the volume string in that configuration, will give the user a dialog to securley put their username and password into. the user also has the feature to save the user and pass to their keychain.
+
 try
     
     mount volume volumeString
     --Cloud is connected after this point!
-
-
     
     on error
     
        -- could not connect to cloud
         display dialog "Cannot connect to cloud. Please try checking your username and password." buttons {"OK"} with icon 2
-    end try
+
+end try
 
 else
 -- could not connect to cloud
